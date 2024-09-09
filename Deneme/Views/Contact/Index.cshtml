@@ -1,0 +1,105 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+<link href="~/CoreBlogTema/css/contact.css" rel='stylesheet' type='text/css' />
+
+<body>
+    <section class="main-content-w3layouts-agileits">
+        <h3 class="tittle">Bize Ulaşın</h3>
+        <p class="sub text-center">Düşünceleriniz bizim için çok değerli</p>
+        <div class="contact-map inner-sec">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5610.4282081646115!2d32.841452338431814!3d39.9389825805738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34ef1d96775cb%3A0x6da6f3a8d64f246e!2sAnkara%20Atat%C3%BCrk%20Spor%20Salonu!5e0!3m2!1str!2str!4v1725397931752!5m2!1str!2str"
+                    class="map" style="border:0" allowfullscreen=""></iframe>
+        </div>
+        <div class="ad-inf-sec bg-light">
+            <div class="container">
+                <div class="address row">
+                    <div class="col-lg-4 address-grid">
+                        <div class="row address-info">
+                            <div class="col-md-4 address-left text-center">
+                                <i class="far fa-map"></i>
+                            </div>
+                            <div class="col-md-8 address-right text-left">
+                                <h6>Adres</h6>
+                                <p>
+                                    Ankara Spor Salonu 06330 Gar / ANKARA
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 address-grid">
+                        <div class="row address-info">
+                            <div class="col-md-4 address-left text-center">
+                                <i class="far fa-envelope"></i>
+                            </div>
+                            <div class="col-md-8 address-right text-left">
+                                <h6>Mail</h6>
+                                <p>
+                                    Email :
+                                    <a href="mailto:example@email.com"> ankarabasketbol06@gmail.com</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 address-grid">
+                        <div class="row address-info">
+                            <div class="col-md-4 address-left text-center">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="col-md-8 address-right text-left">
+                                <h6>Telefon</h6>
+                                <p>	0(312) 309 91 91/4600</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="contact_grid_right">
+                <form method="post">
+                    <div class="row contact_left_grid">
+                        <div class="contact-form-success alert alert-success d-none mt-4">
+                            <strong>Başarılı!</strong> Mesajınız gönderildi.
+                        </div>
+                        <div class="contact-form-error alert alert-danger d-none mt-4">
+                            <strong>Hata!</strong>Mesaj gönderilirken hata oluştu.
+                            <span class="mail-error-message text-1 d-block"></span>
+                        </div>
+                        <div class="col-md-6 con-left">
+                            <div class="form-group">
+                                <label for="validationCustom01 my-2">Adınız</label>
+                                <input class="form-control" type="text" name="ContactUserName" data-msg-required="Lütfen adınızı giriniz." placeholder="" required="">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Mail Adresiniz</label>
+                                <input class="form-control" type="email" name="ContactMail" data-msg-required="Lütfen mailinizi giriniz." data-msg-email="Lütfen geçerli bir email adresi giriniz." placeholder="" required="">
+                            </div>
+                            <div class="form-group">
+                                <label for="validationCustom03 my-2">Konu</label>
+                                <input class="form-control" type="text" name="ContactSubject" data-msg-required="Lütfen konuyu giriniz." placeholder="" required="">
+                            </div>
+                        </div>
+                        <div class="col-md-6 con-right">
+                            <div class="form-group">
+                                <label for="textarea">Mesajınız</label>
+                                <textarea id="textarea" name="ContactMessage" data-msg-required="Lütfen mesajınızı giriniz." placeholder="" required=""></textarea>
+                            </div>
+                            <button id="btn" type="submit" class="form-control btn btn-dark">Gönder</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                alert("Mesajınız başarıyla gönderildi.");
+            });
+        });
+    </script>
+</body>
+

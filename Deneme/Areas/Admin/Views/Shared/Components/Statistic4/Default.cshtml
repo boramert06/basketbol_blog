@@ -1,0 +1,45 @@
+﻿<div class="row">
+    <div class="col-lg-4">
+        <div class="widget-head-color-box navy-bg p-sm text-center">
+            <div class="m-b-sm">
+                <h2 class="font-bold no-margins">
+                    @ViewBag.ad
+                </h2>
+            </div>
+            <img src="~/WriterImageFiles/@ViewBag.v2" style="width:85px; height:100px" class="rounded-circle circle-border m-b-sm" alt="profile">
+        </div>
+        <div class="widget-text-box">
+            <p>@ViewBag.v3</p>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="widget lazur-bg p-xl">
+            <h2 class="font-bold">
+                @ViewBag.ad
+            </h2>
+            <ul class="list-unstyled m-t-xl">
+                <li>
+                    <span class="fa fa-envelope m-r-sm"></span>
+                    <label>Email:</label>
+                    @ViewBag.mail
+                </li>
+                <li>
+                    <span class="fa fa-phone m-r-sm"></span>
+                    <label>Telefon:</label>
+                    @ViewBag.telefon
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="widget yellow-bg p-xl text-center">
+            <div class="m-b-lg">
+                <i class="fa fa-thumbs-up fa-5x"></i>
+                <h1 class="m-md">@ViewBag.blogBegeni</h1>
+                <h3 class="font-bold no-margins">
+                    Son Blogun Beğeni Sayısı
+                </h3>
+            </div>
+        </div>
+    </div>
+</div>

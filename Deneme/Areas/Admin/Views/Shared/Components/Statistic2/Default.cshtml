@@ -1,0 +1,39 @@
+﻿<div class="row">
+    <div class="col-lg-6">
+        <div class="widget navy-bg no-padding">
+            <div class="p-m">
+                <h1 class="m-xs">Dashboard</h1>
+                <h3 class="font-bold no-margins">
+                   Asp.Net Core 5.0
+                </h3>
+                <small>Projemizin bu panelinde Admin işlemleri bir Area yapısı üzerinden gerçekleşmektedir.</small>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="widget lazur-bg no-padding">
+            <div class="p-m">
+                <h1 class="m-xs">Son Blog</h1>
+
+                <h3 class="font-bold no-margins">
+                    @ViewBag.v1
+                </h3>
+                <a href="/Admin/AdminBlog/Index"><small>Tüm Bloglar</small></a>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="widget style1 yellow-bg">
+            <div class="p-xxs">
+                <h3 class="m-xs">Toplam Kategori</h3>
+                <h2 class="font-bold no-margins text-center ">
+                    @ViewBag.kategoriSayisi
+                    <br />
+                </h2>
+                <small>Spordan daha fazlası ...</small>
+            </div>
+        </div>
+    </div>
+</div>

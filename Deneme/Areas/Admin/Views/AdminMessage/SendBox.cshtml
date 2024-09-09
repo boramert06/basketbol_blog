@@ -1,0 +1,90 @@
+﻿@using EntityLayer.Concrete
+@model List<Message2>
+
+@{
+    ViewData["Title"] = "SendBox";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@{
+    int sayac = 0;
+}
+
+<!DOCTYPE html>
+<html>
+<body id="sayfa">
+    <div class="wrapper wrapper-content">
+        <form method="post" id="mesajForm">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="ibox ">
+                        <div class="ibox-content mailbox-content">
+                            <div class="file-manager">
+                                <a class="btn btn-block btn-primary compose-mail" href="/Admin/AdminMessage/SendBox">Mesaj Kutusu</a>
+                                <div class="space-25"></div>
+                                <h5>Klasörler</h5>
+                                <ul class="folder-list m-b-md" style="padding: 0">
+                                    <li><a href="/Admin/AdminMessage/Inbox"> <i class="fa fa-inbox "></i> Gelen Mesajlar <span class="label label-warning float-right">@ViewBag.gelenMesajSayisi</span> </a></li>
+                                    <li><a href="/Admin/AdminMessage/SendBox"> <i class="fa fa-send"></i> Giden Mesajlar <span class="label label-info float-right">@ViewBag.gidenMesajSayisi</span></a></li>
+                                    <li><a href="/Admin/AdminMessage/ComposeMessage"> <i class="fa fa-envelope-o"></i> Mesaj Oluştur</a></li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 animated fadeInRight">
+                    <div class="mail-box-header">
+                        <h2>
+                            Giden Kutusu (@ViewBag.gidenMesajSayisi)
+                        </h2>
+                        <div class="mail-tools tooltip-demo m-t-md">
+                            <button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="left" title="Yenile"><i class="fa fa-refresh"></i> </button>
+                            <button id="Delete" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Çöp kutusuna taşı"><i class="fa fa-trash-o"></i> </button>
+                        </div>
+                    </div>
+                    <div class="mail-box">
+                        <table class="table table-hover table-mail">
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr class="unread">
+                                        <td><input hidden name="mesaj[@sayac].CheckboxId" value="@item.MessageID" /></td>
+                                        <td class="check-mail"><input type="checkbox" class="i-checks" name="mesaj[@sayac].Status" value="true"></td>
+                                        <td class="mail-ontact"><a href="/Admin/AdminMessage/SendMessageDetail/@item.MessageID">@item.ReceiverUser.NameSurname</a></td>
+                                        <td class="mail-subject"><a href="/Admin/AdminMessage/SendMessageDetail/@item.MessageID">@item.Subject</a></td>
+                                        <td class="text-right mail-date">@item.MessageDate.ToShortDateString()</td>
+                                    </tr>
+                                    sayac++;
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+    <script>
+
+        $("#Delete").click(function () {
+            var data = $("#mesajForm").serialize()
+            $.post("@Url.Action("MessageDelete", "AdminMessage")", data)
+                .then(function (data) {
+                    $(".unread").remove()
+
+                }).catch(function (error) {
+                    console.log(error.message)
+                })
+            $(function () {
+                $("#sayfa").load();
+
+            });
+        });
+
+    </script>
+</body>
+</html>
+
+
+

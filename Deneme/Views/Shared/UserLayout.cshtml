@@ -1,0 +1,102 @@
+﻿@{
+    Layout = null;
+}
+
+<!--
+    Author: W3layouts
+    Author URL: http://w3layouts.com
+    License: Creative Commons Attribution 3.0 Unported
+    License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <title>ANKARA BASKETBOL İL TEMSİLCİLİĞİ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Weblog a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link href="~/CoreBlogTema/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="~/CoreBlogTema/css/single.css">
+    <link href="~/CoreBlogTema/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="~/CoreBlogTema/css/fontawesome-all.css" rel="stylesheet">
+    <link href="~/CoreBlogTema/fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
+          rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="top-bar_sub_w3layouts container-fluid">
+            <div class="row">
+                <div class="col-md-4 logo text-left">
+                    <a class="navbar-brand" href="/Blog/Index">
+                        <i class="fab fa-linode"></i>ANKARA BASKETBOL
+                    </a>
+                </div>
+                @await Html.PartialAsync("GirisKayitPartial")
+                <div class="col-md-4 log-icons text-right">
+                    <ul class="social_list1 mt-3">
+                        <li>
+                            <a href="https://www.instagram.com/ankarabasketbol_iltemsilciligi/" class="instagram mx-2" style="background-color: rgb(172, 43, 172);">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://x.com/ankara_basket" class="twitter2" style="background-color: #55acee;">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        @await Html.PartialAsync("HeaderPartial")
+
+    </header>
+    @RenderBody()
+    @await Html.PartialAsync("FooterPartial")
+    <script src="~/CoreBlogTema/js/jquery-2.2.3.min.js"></script>
+    <script src="~/CoreBlogTema/js/move-top.js"></script>
+    <script src="~/CoreBlogTema/js/easing.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 900);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            /*
+                                    var defaults = {
+                                            containerID: 'toTop', // fading element id
+                                        containerHoverID: 'toTopHover', // fading element hover id
+                                        scrollSpeed: 1200,
+                                        easingType: 'linear'
+                                        };
+                                    */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <a href="#home" class="scroll" id="toTop" style="display: block;">
+        <span id="toTopHover" style="opacity: 1;"> </span>
+    </a>
+    <script src="~/CoreBlogTema/js/bootstrap.js"></script>
+</body>
+</html>

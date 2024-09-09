@@ -1,0 +1,84 @@
+﻿@model Deneme.Models.AramaModel
+@{
+    ViewData["Title"] = "Arama";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+<div role="main" class="main" style="background-color:#fff; margin-bottom:100px">
+    <hr class="m-0">
+    <div class="container col-md-10 py-5 mt-3">
+        @if (Model.Blogs.Count == 0 && Model.Message2s.Count == 0 && Model.Notifications.Count == 0 && Model.Categories.Count == 0)
+        {
+            <div class="row">
+                <div class="col-md-8">
+                    <h2 class="font-weight-normal text-6 mb-0">Aradığınız sonuç bulunamadı.</h2>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row">
+                <div class="col-md-8">
+                    <h2 class="font-weight-normal text-6 mb-0">Arama sonuçları listeleniyor...</h2>
+                </div>
+            </div>
+            <hr class="my-4" style="margin-left:-15px">
+            <div class="row">
+                <div class="col-md-12 " style="margin-bottom:80px">
+                    @foreach (var item in Model.Blogs)
+                    {
+                        <ul class="simple-post-list m-0">
+                            <li>
+                                <div class="post-info">
+                                    <a href="/Blog/BlogListByWriter ">@Html.Raw(@item.BlogTitle), @Html.Raw(item.BlogContent)</a>
+                                    <div class="post-meta">                                       
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="col pt-2 mt-1">
+                            <hr class="my-4" style="margin-left:-15px">
+                        </div>
+                    }
+                    @foreach (var item in Model.Message2s)
+                    {
+                        <ul class="simple-post-list m-0">
+                            <li>
+                                <div class="post-info">
+                                    <a href="/Message/InBox/">@Html.Raw(@item.MessageDate)</a>
+                                    <div class="post-meta">                                       
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    }
+                    @foreach (var item in Model.Notifications)
+                    {
+                        <ul class="simple-post-list m-0">
+                            <li>
+                                <div class="post-info">
+                                    <a href="/Notification/AllNotification/">@Html.Raw(@item.NotificationTitle)</a>
+                                    <div class="post-meta">
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    }
+                    @foreach (var item in Model.Categories)
+                    {
+                        <ul class="simple-post-list m-0">
+                            <li>
+                                <div class="post-info">
+                                    <a href="/Dashboard/Index/">@Html.Raw(@item.CategoryName)</a>
+                                    <div class="post-meta">
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

@@ -587,3 +587,4 @@ C:\Users\boram\source\repos\Deneme\Deneme\obj\Debug\net8.0\refint\Deneme.dll
 C:\Users\boram\source\repos\Deneme\Deneme\obj\Debug\net8.0\Deneme.pdb
 C:\Users\boram\source\repos\Deneme\Deneme\obj\Debug\net8.0\Deneme.genruntimeconfig.cache
 C:\Users\boram\source\repos\Deneme\Deneme\obj\Debug\net8.0\ref\Deneme.dll
+C:\Users\boram\source\repos\Deneme\Deneme\obj\Debug\net8.0\Deneme.sourcelink.json
